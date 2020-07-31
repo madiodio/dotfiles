@@ -32,7 +32,6 @@ brew install legit
 brew install deno
 brew install dark-mode
 brew install fontconfig
-brew install freetype
 brew install nvm
 brew install snappy
 brew install starship
@@ -47,7 +46,6 @@ brew tap caskroom/cask
 
 ## Apps I use
 brew cask install alfred
-brew cask install google-chrome #Chrome
 brew cask install iterm2
 
 
