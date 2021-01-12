@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+ZSH_DISABLE_COMPFIX="true"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -76,7 +78,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn-autocompletions zsh-autosuggestions)
+plugins=(git yarn-autocompletions zsh-autosuggestions zsh-syntax-highlighting zsh-better-npm-completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -171,9 +173,6 @@ alias showdesk="defaults write com.apple.finder CreateDesktop true; killall Find
 # Python alias 
 alias python='python3'
 alias python2='python'
-
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-plugins=(colorize bundler)
 
 START="~/Dev"
 
