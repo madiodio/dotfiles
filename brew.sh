@@ -45,8 +45,11 @@ brew install yarn
 brew tap caskroom/cask
 
 ## Apps I use
-brew cask install alfred
-brew cask install iterm2
+brew install --cask alfred
+brew install --cask iterm2
+brew install --cask vlc
+brew install --cask transmission
+brew install --cask insomnia
 
 
 # Remove outdated versions from the cellar.
