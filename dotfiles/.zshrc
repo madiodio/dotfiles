@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -5,6 +7,9 @@ ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Java 
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 eval "$(starship init zsh)"
 
@@ -18,7 +23,7 @@ eval "$(starship init zsh)"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME=""
 
-. ~/z.sh
+. $(brew --prefix)/etc/profile.d/z.sh
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -134,10 +139,8 @@ alias src="source ~/.zshrc"
 # Development workflows
 alias Dev="cd ~/Dev"
 alias OSS="cd ~/Dev/OSS"
-alias woutkofi="cd /Users/mac/Dev/woutkofi"
-alias paps="cd ~/Dev/paps"
 
-# Yarn workflows
+# Yarn commands
 alias y="yarn"
 alias ys="yarn start"
 alias yb="yarn build"
@@ -146,7 +149,16 @@ alias ysls="yarn sls:offline"
 alias yt="yarn test"
 alias ytu="yarn test --u"
 alias ytw="yarn test --watch"
-alias ytuw="yarn test --watch --u" 
+alias ytuw="yarn test --watch --u"
+
+# Pnpm commands
+alias p="pnpm"
+alias pi="pnpm install"
+alias ps="pnpm start"
+alias pd="pnpm dev"
+alias pt="pnpm test"
+alias ptu="pnpm test -u"
+alias pb="pnpm build" 
 
 alias prev="cd .."
 alias prevx="cd ../.."
@@ -157,6 +169,9 @@ alias unmess="git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}'
 
 # dark-mode aliases
 alias dark="dark-mode"
+
+# DNS
+alias flushdns="sudo ifconfig lo0 -alias 192.0.2.2"
 
 # Apache
 alias apachestart="sudo apachectl start"
@@ -193,3 +208,28 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/mac/.nvm/versions/node/v11.14.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/mac/.nvm/versions/node/v11.14.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
+
+
+
+
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# bun completions
+[ -s "/Users/gaye/.bun/_bun" ] && source "/Users/gaye/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/gaye/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Fig post block. Keep at the bottom of this file.h
+
+# pnpm
+export PNPM_HOME="/Users/gaye/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

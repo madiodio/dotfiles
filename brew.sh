@@ -17,8 +17,6 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-
-brew install gmp
 brew install grep
 brew install node
 
@@ -30,8 +28,6 @@ brew install ssh-copy-id
 brew install tree
 brew install legit
 brew install deno
-brew install dark-mode
-brew install fontconfig
 brew install nvm
 brew install snappy
 brew install starship
@@ -45,8 +41,6 @@ brew install yarn
 brew tap caskroom/cask
 
 ## Apps I use
-brew install --cask alfred
-brew install --cask iterm2
 brew install --cask vlc
 brew install --cask transmission
 brew install --cask insomnia
@@ -54,3 +48,5 @@ brew install --cask insomnia
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+curl https://bun.sh/install | bash

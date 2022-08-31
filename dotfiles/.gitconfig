@@ -9,6 +9,7 @@
 	unmess = !git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 	fate = !git add -A && git commit --amend --no-edit
 	show-last-commit = !git log --name-status HEAD^..HEAD
+	rename = branch -m
 
 [apply]
 
@@ -103,7 +104,7 @@
 [push]
 
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
-	default = simple
+	default = current
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
@@ -134,3 +135,5 @@
 
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
